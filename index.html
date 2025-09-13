@@ -50,12 +50,20 @@
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>INSAIT, Sofia University “St. Kliment Ohridski”,</span>
+          <div class="is-size-5 publication-authors" style="margin-bottom: 5px;">
+            <span class="author-block"><sup>1</sup>INSAIT, Sofia University "St. Kliment Ohridski",</span>
             <span class="author-block"><sup>2</sup>ETH Zurich,</span>
           </div>
 
-          <div class="column has-text-centered">
+          <!-- Institution Logos -->
+          <div class="has-text-centered" style="margin: 5px 0; padding: 0;">
+            <div class="institution-logos" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+              <img src="./static/figures/insaitlogo.png" alt="INSAIT Logo" style="height: 30px; max-width: 250px; object-fit: cover; object-position: center;">
+              <img src="./static/figures/ethlogo.png" alt="ETH Zurich Logo" style="height: 45px; max-width: 150px; object-fit: contain;">
+            </div>
+          </div>
+
+          <div class="column has-text-centered" style="margin-top: 5px; padding-top: 0;">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -98,7 +106,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/CoRLVideo.mp4"
+        <source src="./static/videos/corl_video.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -115,15 +123,13 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Recent advances in generalist robot manipulation leverage pre-trained Vision–Language Models (VLMs) and large-scale robot demonstrations to tackle diverse tasks in a zero-shot manner. A key challenge remains: scaling high-quality, action-labeled robot demonstration data, which existing methods rely on for robustness and generalization.
-          </p>
-          <p>
-            To address this, we propose a method that benefits from videos without action labels—featuring humans and/or robots in action—enhancing open-vocabulary performance and enabling data-efficient learning of new tasks. Our method extracts dense, dynamic 3D point clouds at the hand or gripper location and uses a proposed 3D dynamics predictor for self-supervision.
-          </p>
-          <p>
-            We show that our method not only learns from unlabeled human and robot demonstrations—improving downstream generalist robot policies—but also enables robots to learn new tasks without action labels (i.e., out-of-action generalization) in both real-world and simulated settings.
-          </p>
+          <p>Recent advances in generalist robot manipulation leverage pre-trained
+          Vision Language Models (VLMs) and large-scale robot demonstrations to tackle
+          diverse tasks in a zero-shot manner. A key challenge remains: scaling high-quality, action-labeled robot demonstration data, which existing methods rely on for robustness and generalization.</p>
+          
+          <p>To address this, we propose a method that benefits from videos without action labels—featuring humans and/or robots in action—enhancing open-vocabulary performance and enabling data-efficient learning of new tasks. Our method extracts dense, dynamic 3D point clouds at the hand or gripper location and uses a proposed 3D dynamics predictor for self-supervision. This predictor is then tuned to an action predictor using a smaller labeled dataset for action alignment.</p>
+          
+          <p>We show that our method not only learns from unlabeled human and robot demonstrations—improving downstream generalist robot policies—but also enables robots to learn new tasks without action labels (i.e., out-of-action generalization) in both real-world and simulated settings.</p>
         </div>
       </div>
     </div>
@@ -134,7 +140,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
-          <img src="./static/figures/Overview-Draft(15).jpg" alt="Method Overview" style="width: 100%; margin: 20px 0;">
+          <img src="./static/figures/Overview.jpg" alt="Method Overview" style="width: 100%; margin: 20px 0;">
           <p>
             Our method enables robot actions whose labels are not available during training. Such unlabeled demonstrations may come from humans or other robots performing them. This out-of-action domain generalization is achieved using large-scale dynamic point cloud-based training, followed by action alignment on a smaller dataset with action labels.
           </p>
@@ -148,9 +154,9 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Architecture</h2>
         <div class="content has-text-justified">
-          <img src="./static/figures/ArchitectureCoRL2025-fixed.png" alt="Architecture" style="width: 100%; margin: 20px 0;">
+          <img src="./static/figures/Architecture.png" alt="Architecture" style="width: 100%; margin: 20px 0;">
           <p>
-            We utilize a 3D Dynamics Predictor to learn an embodiment agnostic representation from unlabeled videos, followed by an Action Predictor for generalist manipulation. The approach uses a two-stage training process with dynamic point clouds as a common representation.
+            We utilize a 3D Dynamics Predictor to learn an embodiment agnostic representation from unlabeled videos, followed by an Action Predictor for generalist manipulation. The approach uses a two-stage training process with dynamic point clouds as a common representation. We initialize the Action Predictor with the Dynamics Predictor and finetune it on a smaller dataset with action labels.
           </p>
         </div>
       </div>
@@ -162,7 +168,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">In-Domain Results</h2>
         <div class="content has-text-justified">
-          <img src="./static/figures/IDR.png" alt="In-Domain Results" style="width: 100%; margin: 20px 0;">
+          <img src="./static/figures/In-Domain.png" alt="In-Domain Results" style="width: 100%; margin: 20px 0;">
           <p>
             MotoVLA (R + H) achieves 68.2% average success rate in SIMPLER simulation, outperforming LAPA by 14.1% and π₀ baseline by 11.4%. Dynamic point cloud pre-training improves performance even for tasks with action supervision, demonstrating effective cross-domain motion prior learning.
           </p>
@@ -176,7 +182,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Out-of-Domain Results</h2>
         <div class="content has-text-justified">
-          <img src="./static/figures/OOD_result.png" alt="Out-of-Domain Results" style="width: 100%; margin: 20px 0;">
+          <img src="./static/figures/OOD-Results.png" alt="Out-of-Domain Results" style="width: 100%; margin: 20px 0;">
           <p>
             Our method achieves superior performance on real robot evaluation across 8 out-of-domain tasks. Significant improvements are observed for tasks present in human demonstration data (Push Button, Cube on Scale, Cable in Basket, Clamp in Cup), demonstrating direct knowledge transfer from unlabeled cross-embodiment demonstrations.
           </p>
