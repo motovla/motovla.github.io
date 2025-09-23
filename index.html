@@ -38,15 +38,15 @@
             <span class="author-block">
               <a href="https://aspiridon0v.github.io/">Alexander Spiridonov</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://jannicozaech.github.io/">Jan-Nico Zaech</a><sup>2</sup>,</span>
+              <a href="https://jannicozaech.github.io/">Jan-Nico Zaech</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://insait.ai/nikolay-nikolov-2/">Nikolay Nikolov</a><sup>2</sup>,
+              <a href="https://insait.ai/nikolay-nikolov-2/">Nikolay Nikolov</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://vision.ee.ethz.ch/people-details.OTAyMzM=.TGlzdC8zMjg3LC0xOTcxNDY1MTc4.html">Luc Van Gool</a><sup>2</sup>,
+              <a href="https://vision.ee.ethz.ch/people-details.OTAyMzM=.TGlzdC8zMjg3LC0xOTcxNDY1MTc4.html">Luc Van Gool</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://insait.ai/dr-danda-paudel/">Danda Pani Paudel</a><sup>2</sup>,
+              <a href="https://insait.ai/dr-danda-paudel/">Danda Pani Paudel</a><sup>1</sup>,
             </span>
           </div>
 
@@ -182,6 +182,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Out-of-Domain Results</h2>
         <div class="content has-text-justified">
+          <!-- Experiment Video -->
+          <div style="margin: 20px 0;">
+            <video id="experiment-video" autoplay muted loop playsinline style="width: 100%; max-width: 100%; height: auto;">
+              <source src="./static/videos/ExpVideos.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
           <img src="./static/figures/OOD-Results.png" alt="Out-of-Domain Results" style="width: 100%; margin: 20px 0;">
           <p>
             Our method achieves superior performance on real robot evaluation across 8 out-of-domain tasks. Significant improvements are observed for tasks present in human demonstration data (Push Button, Cube on Scale, Cable in Basket, Clamp in Cup), demonstrating direct knowledge transfer from unlabeled cross-embodiment demonstrations.
