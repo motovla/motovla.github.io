@@ -123,11 +123,12 @@
 </section>
 
 <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <video id="teaser" autoplay muted loop playsinline preload="auto" style="width: 100%; max-width: 100%; height: auto; display: block;">
         <source src="./static/videos/corl_video.mp4"
                 type="video/mp4">
+        Your browser does not support the video tag.
       </video>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">MotoVLA</span> enables zero-shot robot manipulation by learning from unlabeled human and robot demonstrations.
@@ -222,17 +223,19 @@
   </div>
 </section>
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{spiridonov2025MotoVLA,
-  author    = {Spiridonov, Alexander and Zaech, Jan-Nico and Nikolov, Nikolay and Van Gool, Luc and Paudel, Danda Pani},
-  title     = {Generalist Robot Manipulation Beyond Action Labeled Data},
-  journal   = {CoRL},
-  year      = {2025},
-}</code></pre>
+    <pre><code>@inproceedings{
+        spiridonov2025generalist,
+        title={Generalist Robot Manipulation beyond Action Labeled Data},
+        author={Alexander Spiridonov and Jan-Nico Zaech and Nikolay Nikolov and Luc Van Gool and Danda Pani Paudel},
+        booktitle={9th Annual Conference on Robot Learning},
+        year={2025},
+        url={https://openreview.net/forum?id=ZqBXnR6ppz}
+    }</code></pre>
   </div>
-</section> -->
+</section>
 
 <footer class="footer">
   <div class="container">

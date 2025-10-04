@@ -1,6 +1,14 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 $(document).ready(function() {
+    // Explicitly play the teaser video for Chrome compatibility
+    var teaserVideo = document.getElementById('teaser');
+    if (teaserVideo) {
+        teaserVideo.play().catch(function(error) {
+            console.log("Video autoplay failed:", error);
+        });
+    }
+
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
