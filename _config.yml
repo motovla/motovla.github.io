@@ -1,0 +1,22 @@
+# Jekyll configuration for GitHub Pages
+title: "Generalist Robot Manipulation Beyond Action Labeled Data"
+description: "MotoVLA: Robot Manipulation Beyond Action Labeled Data"
+url: "https://motovla.github.io"
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Plugins
+plugins:
+  - jekyll-redirect-from
+
+# Collections (if needed in future)
+collections_dir: .
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
